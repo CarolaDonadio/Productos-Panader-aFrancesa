@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--CARDS PRODUCTOS-->
+    <section class="body-container-products">
+        <div class="grid-container">
+            <!--BARRA DE BÚSQUEDA-->
+            <div class="body-container-barradebusqueda">
+                <div id="buscar" class="buscar">
+                    <input type="text" placeholder="Buscar" required>
+                    <div class="btn">
+                        <i class="fas fa-search icon" id="btn"></i>
+                    </div>
+                    <div id="panel" class="panel"></div>
+                </div>
+            </div>
+        
+            <!--CALCULAODRA-->
+            <div class="body-container-calculadora">
+                <a class="btn-modal-popup" onclick="popupToggle();"><i class="fi fi-rr-calculator"><img src="./img/calculadora.svg" alt=""></i></a>
+                <div id="popup">
+                    <div class="calculator">
+                        <a class="close-fotoprincipal" onclick="popupToggle();"><img src="./img/cancel.png" alt=""></a>
+                        <div class="calculator-dark">
+                            <div class="theme-toggler active">
+                                <i class="toggler-icon"></i>
+                            </div>
+                            <div class="display-screen">
+                                <div id="display"></div>
+                            </div>
+                            <div class="buttons">
+                                <table>
+                                    <tr>
+                                        <td><button class="btn-operator" id="clear">C</button></td>
+                                        <td><button class="btn-operator" id="/">&divide;</button></td>
+                                        <td><button class="btn-operator" id="*">&times;</button></td>
+                                        <td><button class="btn-operator" id="backspace"><</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="btn-number" id="7">7</button></td>
+                                        <td><button class="btn-number" id="8">8</button></td>
+                                        <td><button class="btn-number" id="9">9</button></td>
+                                        <td><button class="btn-operator" id="-">-</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="btn-number" id="4">4</button></td>
+                                        <td><button class="btn-number" id="5">5</button></td>
+                                        <td><button class="btn-number" id="6">6</button></td>
+                                        <td><button class="btn-operator" id="+">+</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="btn-number" id="1">1</button></td>
+                                        <td><button class="btn-number" id="2">2</button></td>
+                                        <td><button class="btn-number" id="3">3</button></td>
+                                        <td rowspan="2"><button class="btn-equal" id="equal">=</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="btn-operator" id="0">0</button></td>
+                                        <td><button class="btn-number" id="(">(</button></td>
+                                        <td><button class="btn-operator" id=")">)</button></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #1-->
+            <div class="product-card">
+                <img src="./img/postre1.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Chausson Aux Pommes</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #2-->
+            <div class="product-card2">
+                <img src="./img/postre2.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Beignet</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #3-->
+            <div class="product-card3">
+                <img src="./img/postre3.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Honey Bread Roll</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #4-->
+            <div class="product-card4">
+                <img src="./img/postre4.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Pan Brioche</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #5-->
+            <div class="product-card5">
+                <img src="./img/postre5.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Canelés</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #6-->
+            <div class="product-card6">
+                <img src="./img/postre6.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Cremé Flan</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #7-->
+            <div class="product-card7">
+                <img src="./img/postre7.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Choux á la Créme</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #8-->
+            <div class="product-card8">
+                <img src="./img/postre8.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Clafoutis</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #9-->
+            <div class="product-card9">
+                <img src="./img/postre9.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Macaron</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?
+                            <br><br>
+                            <i>Consultar los sabores.</i>
+                        </p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #10-->
+            <div class="product-card10">
+                <img src="./img/postre10.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Crêpe Suzette</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #11-->
+            <div class="product-card11">
+                <img src="./img/postre11.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Croissant</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #12-->
+            <div class="product-card12">
+                <img src="./img/postre12.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Éclair</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?
+                            <br><br>
+                            <i>Consultar sabores.</i>
+                        </p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #13-->
+            <div class="product-card13">
+                <img src="./img/postre13.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Pastel de Coco</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #14-->
+            <div class="product-card14">
+                <img src="./img/postre14.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Financier</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?
+                            <br><br>
+                            <i>Consultar sabores.</i>
+                        </p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #15-->
+            <div class="product-card15">
+                <img src="./img/postre15.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Gland</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #16-->
+            <div class="product-card16">
+                <img src="./img/postre16.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Madeleines</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #17-->
+            <div class="product-card17">
+                <img src="./img/postre17.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Calisson</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #18-->
+            <div class="product-card18">
+                <img src="./img/postre18.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Dariole</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #19-->
+            <div class="product-card19">
+                <img src="./img/postre19.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Flaugnarde</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #20-->
+            <div class="product-card20">
+                <img src="./img/postre20.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Isla Flotante</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #21-->
+            <div class="product-card21">
+                <img src="./img/postre21.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Riz à L'impératrice</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #22-->
+            <div class="product-card22">
+                <img src="./img/postre22.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Suflé</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #23-->
+            <div class="product-card23">
+                <img src="./img/postre23.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Tarte aux Pralines</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #24-->
+            <div class="product-card24">
+                <img src="./img/postre24.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Babá</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #25-->
+            <div class="product-card25">
+                <img src="./img/postre25.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Mille-Feuille</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?
+                            <br><br>
+                            <i>Consultar sabores.</i>
+                        </p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #26-->
+            <div class="product-card26">
+                <img src="./img/postre26.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Mont Blanc</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #27-->
+            <div class="product-card27">
+                <img src="./img/postre27.jpg" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Pain Au Chocolat</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #28-->
+            <div class="product-card28">
+                <img src="./img/postre28.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Pain Aux Raisins</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #29-->
+            <div class="product-card29">
+                <img src="./img/postre29.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Palmier</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #30-->
+            <div class="product-card30">
+                <img src="./img/postre30.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Paris-Brest</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #31-->
+            <div class="product-card31">
+                <img src="./img/postre31.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Petit Four</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #32-->
+            <div class="product-card32">
+                <img src="./img/postre32.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Profiterole</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #33-->
+            <div class="product-card33">
+                <img src="./img/postre33.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Croquembouche</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #34-->
+            <div class="product-card34">
+                <img src="./img/postre34.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Religieuse</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #35-->
+            <div class="product-card35">
+                <img src="./img/postre35.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Rum Babá</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #36-->
+            <div class="product-card36">
+                <img src="./img/postre36.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Saint Honoré</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #37-->
+            <div class="product-card37">
+                <img src="./img/postre37.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Tarta de Crema Pastelera</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #38-->
+            <div class="product-card38">
+                <img src="./img/postre38.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Tarta Tatin</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #39-->
+            <div class="product-card39">
+                <img src="./img/postre39.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Crème Brûlée</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #40-->
+            <div class="product-card40">
+                <img src="./img/postre40.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Charlotte</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?
+                            <br><br>
+                            <i>Consultar sabores.</i>
+                        </p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #41-->
+            <div class="product-card41">
+                <img src="./img/postre41.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Pastel Ópera</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #42-->
+            <div class="product-card42">
+                <img src="./img/postre42.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Fraisier</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #43-->
+            <div class="product-card43">
+                <img src="./img/postre43.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Kouign Amann</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #44-->
+            <div class="product-card44">
+                <img src="./img/postre44.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Tarta Marjolaine</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #45-->
+            <div class="product-card45">
+                <img src="./img/postre45.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Mousse</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?
+                            <br><br>
+                            <i>Consultar sabores.</i>
+                        </p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #46-->
+            <div class="product-card46">
+                <img src="./img/postre46.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Mendiant</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #47-->
+            <div class="product-card47">
+                <img src="./img/postre47.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Torta Normanda</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #48-->
+            <div class="product-card48">
+                <img src="./img/postre48.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Pain D'épices</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #49-->
+            <div class="product-card49">
+                <img src="./img/postre49.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Pot de crème</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #50-->
+            <div class="product-card50">
+                <img src="./img/postre50.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Baguette</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #51-->
+            <div class="product-card51">
+                <img src="./img/postre51.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Chouquettes</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #52-->
+            <div class="product-card52">
+                <img src="./img/postre52.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Coussin de Lyon</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #53-->
+            <div class="product-card53">
+                <img src="./img/postre53.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Croustade</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #54-->
+            <div class="product-card54">
+                <img src="./img/postre54.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Jésuite</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #55-->
+            <div class="product-card55">
+                <img src="./img/postre55.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Puits D'amour</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #56-->
+            <div class="product-card56">
+                <img src="./img/postre56.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Savarin</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #57-->
+            <div class="product-card57">
+                <img src="./img/postre57.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Tarte des Alpes</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #58-->
+            <div class="product-card58">
+                <img src="./img/postre58.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Tarte tropézienne</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--CARD #59-->
+            <div class="product-card59">
+                <img src="./img/postre59.png" class="imgbox" alt="">
+                
+                <div class="product-details">
+                    <div class="product-title">
+                        <h3>Tuile</h3>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h4>Description</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum facere vel ipsa, quibusdam in ea dolores autem doloribus consequatur minus, temporibus beatae non sequi eius quaerat laudantium hic perferendis deserunt?</p>
+                    </div>
+                    
+                    <div class="product-buy">
+                        <div class="product-price">
+                            <span><small>$</small> 200,<small>00</small></span>
+                        </div>
+                        
+                        <div class="product-button">
+                            <a href="#">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--BARRA DE BÚSQUEDA-->
+    <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script>
+
+    <!--SCRIPT PARA CALCULADORA-->
+    <script src="js/calculator.js"></script>
+
+    <!--ALGORITMO PARA BUSCAR UN PRODUCTO-->
+    <script src="js/main.js"></script>
+</body>
+</html>

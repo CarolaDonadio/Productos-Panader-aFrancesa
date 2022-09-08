@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body-container-calculadora {
+    grid-area: calculadora;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+.body-container-barradebusqueda {
+    grid-area: busqueda;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    padding-bottom: 50px;
+}
+
+.buscar {
+    position: absolute;
+    padding: 5px;
+}
+
+.buscar input {
+    width: 0px;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #000;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+    transition: all 0.6s ease;
+
+    
+}
+
+.btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff3e57;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buscar:hover input {
+    width: 240px;
+}
+
+.buscar input:focus {
+    width: 240px;
+}
+
+/*CALCULADORA*/
+.btn-modal-popup {
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-modal-popup img {
+    width: 50px;
+    height: 50px;
+}
+
+#popup {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #fff;
+    width: 340px;
+    transition: 0.5s;
+    visibility: hidden;
+}
+
+#popup.active {
+    visibility: visible;
+    top: 50%;
+}
+
+#popup .calculator {
+    position: relative;
+    height: auto;
+    width: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #cecece;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+.theme-toggler {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.theme-toggler.active::before {
+    background-color: #000;
+}
+
+.theme-toggler::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.close-fotoprincipal {
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    background-color: #e7e7e7;
+    padding: 8px 8px 6px 8px;
+    cursor: pointer;
+}
+
+
+.close-fotoprincipal img {
+    width: 17px;
+    height: 16px;
+}
+
+#display {
+    margin: 0 10px;
+    height: 150px;
+    width: auto;
+    max-width: 270px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 30px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
+  }
+
+#display::-webkit-scrollbar {
+    display: block;
+    height: 3px;
+}
+
+.buttons button {
+    height: 60px;
+    width: 60px;
+    border: 0;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .1s linear;
+
+    position: relative;
+    bottom: 0;
+    box-shadow: 5px 5px 0 #2b2b2b3d;
+
+}
+
+button:active, .calculator button#clear:active {
+    bottom: -5px;
+    box-shadow:0 0 0 #2b2b2b3d;  
+}
+
+button#equal {
+    height: 130px;
+}
+
+/* light theme */
+.calculator {
+    background-color: #fff;
+}
+
+.calculator #display {
+    color: #0a1e23;
+}
+
+.calculator button#clear {
+    background-color: #ffb3b8;
+    color: #ff4e5a;
+
+    transition: all .1s linear;
+    position: relative;
+    bottom: 0;
+    box-shadow: 5px 5px 0 #ffc6c6;
+}
+
+.calculator button.btn-number, .calculator button.btn-operator, .calculator button.btn-equal {
+    background-color: #eeeeee;
+    color: #000000;
+}
+
+  /* dark theme */
+  .calculator.dark {
+    background-color: #071115;
+  }
+
+  .calculator.dark #display {
+    color: #f8fafb;
+  }
+
+  .calculator.dark button#clear {
+    background-color: #ff6a8f;
+    color: #ff2230;
+  }
+
+  .calculator.dark button.btn-number, .calculator.dark button.btn-operator, .calculator.dark button.btn-equal {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/*CARDS PRODUCTOS*/
+.body-container-products {
+    background-color: #eeeeee;
+}
+
+.grid-container {
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(1, 80px) repeat(29, 300px);
+    justify-content: space-around;
+    grid-row-gap: 20px;
+    grid-template-areas:
+    "busqueda calculadora"
+    "card1 card2"
+    "card3 card4"
+    "card5 card6"
+    "card7 card8"
+    "card9 card10"
+    "card11 card12"
+    "card13 card14"
+    "card15 card16"
+    "card17 card18"
+    "card19 card20"
+    "card21 card22"
+    "card23 card24"
+    "card25 card26"
+    "card27 card28"
+    "card29 card30"
+    "card31 card32"
+    "card33 card34"
+    "card35 card36"
+    "card37 card38"
+    "card39 card40"
+    "card41 card42"
+    "card43 card44"
+    "card45 card46"
+    "card47 card48"
+    "card49 card50"
+    "card51 card52"
+    "card53 card54"
+    "card55 card56"
+    "card57 card58"
+    "card59 card59";
+}
+
+.product-card, .product-card2, .product-card3, .product-card4, .product-card5, .product-card6, .product-card7, .product-card8, .product-card9, .product-card10,
+.product-card11, .product-card12, .product-card13, .product-card14, .product-card15, .product-card16, .product-card17, .product-card18, .product-card19,
+.product-card20, .product-card21, .product-card22, .product-card23, .product-card24, .product-card25, .product-card26, .product-card27, .product-card28,
+.product-card29, .product-card30, .product-card31, .product-card32, .product-card33, .product-card34, .product-card35, .product-card36, .product-card37,
+.product-card38, .product-card39, .product-card40, .product-card41, .product-card42, .product-card43, .product-card44, .product-card45, .product-card46,
+.product-card47, .product-card48, .product-card49, .product-card50, .product-card51, .product-card52, .product-card53, .product-card54, .product-card55,
+.product-card56, .product-card57, .product-card58, .product-card59 {
+    grid-area: card1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 300px;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+.product-card2 {
+    grid-area: card2;
+}
+.product-card3 {
+    grid-area: card3;
+}
+.product-card4 {
+    grid-area: card4;
+}
+.product-card5 {
+    grid-area: card5;
+}
+.product-card6 {
+    grid-area: card6;
+}
+.product-card7 {
+    grid-area: card7;
+}
+.product-card8 {
+    grid-area: card8;
+}
+.product-card9 {
+    grid-area: card9;
+}
+.product-card10 {
+    grid-area: card10;
+}
+.product-card11 {
+    grid-area: card11;
+}
+.product-card12 {
+    grid-area: card12;
+}
+.product-card13 {
+    grid-area: card13;
+}
+.product-card14 {
+    grid-area: card14;
+}
+.product-card15 {
+    grid-area: card15;
+}
+.product-card16 {
+    grid-area: card16;
+}
+.product-card17 {
+    grid-area: card17;
+}
+.product-card18 {
+    grid-area: card18;
+}
+.product-card19 {
+    grid-area: card19;
+}
+.product-card20 {
+    grid-area: card20;
+}
+.product-card21 {
+    grid-area: card21;
+}
+.product-card22 {
+    grid-area: card22;
+}
+.product-card23 {
+    grid-area: card23;
+}
+.product-card24 {
+    grid-area: card24;
+}
+.product-card25 {
+    grid-area: card25;
+}
+.product-card26 {
+    grid-area: card26;
+}
+.product-card27 {
+    grid-area: card27;
+}
+.product-card28 {
+    grid-area: card28;
+}
+.product-card29 {
+    grid-area: card29;
+}
+.product-card30 {
+    grid-area: card30;
+}
+.product-card31 {
+    grid-area: card31;
+}
+.product-card32 {
+    grid-area: card32;
+}
+.product-card33 {
+    grid-area: card33;
+}
+.product-card34 {
+    grid-area: card34;
+}
+.product-card35 {
+    grid-area: card35;
+}
+.product-card36 {
+    grid-area: card36;
+}
+.product-card37 {
+    grid-area: card37;
+}
+.product-card38 {
+    grid-area: card38;
+}
+.product-card39 {
+    grid-area: card39;
+}
+.product-card40 {
+    grid-area: card40;
+}
+.product-card41 {
+    grid-area: card41;
+}
+.product-card42 {
+    grid-area: card42;
+}
+.product-card43 {
+    grid-area: card43;
+}
+.product-card44 {
+    grid-area: card44;
+}
+.product-card45 {
+    grid-area: card45;
+}
+.product-card46 {
+    grid-area: card46;
+}
+.product-card47 {
+    grid-area: card47;
+}
+.product-card48 {
+    grid-area: card48;
+}
+.product-card49 {
+    grid-area: card49;
+}
+.product-card50 {
+    grid-area: card50;
+}
+.product-card51 {
+    grid-area: card51;
+}
+.product-card52 {
+    grid-area: card52;
+}
+.product-card53 {
+    grid-area: card53;
+}
+.product-card54 {
+    grid-area: card54;
+}
+.product-card55 {
+    grid-area: card55;
+}
+.product-card56 {
+    grid-area: card56;
+}
+.product-card57 {
+    grid-area: card57;
+}
+.product-card58 {
+    grid-area: card58;
+}
+.product-card59 {
+    grid-area: card59;
+}
+
+.imgbox {
+    background-image: url(./img/macarondefram.jpg);
+    background-size: contain;
+    position: relative;
+    min-width: 200px;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-details {
+    position: relative;
+    min-width: 300px;
+    background: #ff2348;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.product-details h4 {
+    font-size: 15px;
+}
+
+.product-details .product-description p {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.product-details .product-buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-details .product-buy .product-price {
+    font-size: 25px;
+}
+
+.product-details .product-buy .product-button {
+    background-color: #fff;
+    padding: 10px 12px;
+    text-transform: uppercase;
+}
+
+.product-details .product-buy .product-button:active {
+    transform: scale(0.96);
+    background:#ff7e87;
+    box-shadow: none;
+}
+
+.product-details .product-buy .product-button a {
+    text-decoration: none;
+    color: #ff2230;
+    transition: 0.2s all;
+}
+
+.product-details .product-buy .product-button a:active {
+    color: #fff;
+}
