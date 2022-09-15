@@ -1,34 +1,24 @@
 'use strict'
 const contenedorProductos = document.getElementById('contenedor-productos')
-
 const contenedorCarrito = document.getElementById('carrito-contenedor')
-
 const botonVaciar = document.getElementById('vaciar-carrito')
-
 const contadorCarrito = document.getElementById('contadorCarrito')
+
 
 const cantidad = document.getElementById('cantidad')
 const precioTotal = document.getElementById('precioTotal')
 const cantidadTotal = document.getElementById('cantidadTotal')
 
+//Array Carrito
 let carrito = []
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (localStorage.getItem('carrito')){
-        carrito = JSON.parse(localStorage.getItem('carrito'))
-        actualizarCarrito()
-    }
-})
 
-botonVaciar.addEventListener('click', () => {
-    carrito.length = 0
-    actualizarCarrito()
-})
 
-//AÑADIR HTML
+//PRIMER PRIMER PASO, INYECTAR EL HTML
 stockProductos.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto')
+    div.setAttribute('id', '#resultado')
 
     div.innerHTML = `
     <img src=${producto.img} class="imgBox" alt= "">
@@ -44,77 +34,121 @@ stockProductos.forEach((producto) => {
             <div class="product-price">
                 <span class="precioProducto"><small>$</small>${producto.precio},<small>00</small></span>
             </div>
-            <div class="product-button">
-            <a id="comprar${producto.id}">Comprar</a>
+            <div class="product-button" onclick="addToCart(${producto.id})">
+            <a>Comprar</a>
         <div>
         </div>
     </div>
     `
     contenedorProductos.appendChild(div)
-
-    //A cada elemento del array se le agrega un div individual
-    const boton = document.getElementById(`comprar${producto.id}`)
-
-    //A cada elemento del array se le agrega un add event listener para ejecutar el botón COMPRAR con la id del producto
-    boton.addEventListener('click', () => {
-        agregarAlCarrito(producto.id)
-    })
 })
 
 
-//Agregar al carrito
-const agregarAlCarrito = (prodId) => {
 
-    //Para aumentar la cantidad y que no se repita
-    const existe = carrito.some (prod => prod.id === prodId) //comprobar si el elemento ya existe en el carro
-
-    if (existe){ //Si ya está en el carrito, se actualiza la cantidad
-        const prod = carrito.map (prod => {
-            if (prod.id === prodId){
-                prod.cantidad++
-            }
-        })
-    } else { //Si no está en el carrito, se agrega al carrito
-        const item = stockProductos.find((prod) => prod.id === prodId)
-        carrito.push(item)
+//ESTO ES PARA DEJAR EL ÚLTIMO PRODUCTO AL REFRESCAR LA PÁGINA
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('carrito')){
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        actualizarCarrito()
     }
-    actualizarCarrito()
+})
+
+// ACTUALIZAR CARRITO
+function actualizarCarrito() {
+    renderItemCarrito();
+    renderPrecioTotal();
 }
 
-const eliminarDelCarrito = (prodId) => {
-    const item = carrito.find((prod) => prod.id === prodId)
-
-    const indice = carrito.indexOf(item) //Busca el elemento que le pase y devuelve su indice.
-
-    carrito.splice(indice, 1) //Le pasamos el indice de mi elemento ITEM y borramos 
-    // un elemento 
-    actualizarCarrito()
-    console.log(carrito)
+//AGREGAR AL CARRITO
+//VERIFICAR SI EL PRODUCTO YA EXISTE EN EL CARRITO
+function addToCart(id) {
+    if (carrito.some((item) => item.id === id)) {
+        cambiarNumeroDeUnidades("aumentar", id)
+    } else {
+        const item = stockProductos.find((producto) => producto.id === id);
+        carrito.push({
+            ...item,
+            numberOfUnits: 1,
+        });
+    }
+    actualizarCarrito();
 }
 
-const actualizarCarrito = () => {
+// Al presionar el botón Vaciar, la cantidad vuelve a 0 y se actualiza el carrito.
+botonVaciar.addEventListener('click', () => {
+    carrito.length = 0
+    actualizarCarrito()
+})
 
-    contenedorCarrito.innerHTML = ""
-    //Por cada producto creamos un div con esta estructura y le hacemos un append al contenedorCarrito
+
+// Calcular y renderizar el precio total
+function renderPrecioTotal() {
+    let valorTotal = 0,
+    productosTotales = 0;
+
+    carrito.forEach((item) => {
+        valorTotal += item.precio * item.numberOfUnits;
+        productosTotales += item.numberOfUnits;
+    })
+
+    precioTotal.innerHTML = `Precio total: $<span id="precioTotal">${valorTotal.toFixed(2)}</span><br>Total Productos: ${productosTotales}`
+}
+
+
+// renderItemCarrito()
+//Por cada producto creamos un div con esta estructura y le hacemos un append al contenedorCarrito (el modal)
+function renderItemCarrito() {
+    contenedorCarrito.innerHTML = "" //classProducto === div
     carrito.forEach((prod) => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
+            
         div.innerHTML = `
-        <p>${prod.nombre}</p>
-        <p>Precio:$${prod.precio}</p>
-        <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-        <a onclick="eliminarDelCarrito(${prod.id})"><img src='img/basura.svg' class="trash-button"></a>
+        <img src='${prod.img}' class="imgCarritoInterno">
+        <div class="containerInfoCarrito">
+            <p class="nombreProducto">${prod.nombre}</p>
+            <p>Precio: <small>$</small>${prod.precio}</p>
+            <div class="unidadesDelCarrito">
+                <div class="botonUnidades disminuir" onclick="cambiarNumeroDeUnidades('disminuir', ${prod.id})">-</div>
+                <div class="numeroUnidades">${prod.numberOfUnits}</div>
+                <div class="botonUnidades aumentar" onclick="cambiarNumeroDeUnidades('aumentar', ${prod.id})">+</div>           
+            </div>
+        </div>
+        <a onclick="eliminarDelCarrito(${prod.id})"><img src='img/cancel.png' class="trash-button"></a>
         `
-
         contenedorCarrito.appendChild(div)
+        
         localStorage.setItem('carrito', JSON.stringify(carrito))
-
     })
 
     contadorCarrito.innerText = carrito.length // Se actualiza con la longitud del carrito.
+}
+    
+//Cambiar el número de unidades por un prod(item)
+function cambiarNumeroDeUnidades(action, id) {
+    carrito = carrito.map((item) => {
+        let numberOfUnits = item.numberOfUnits;
+        if (item.id === id) {
+            if (action === "disminuir" && numberOfUnits > 1) {
+                numberOfUnits--;
+            } else if (action === "aumentar" && numberOfUnits < item.stock) {
+                numberOfUnits++;
+            }
+        }
+        return {
+            ...item,
+            numberOfUnits: numberOfUnits,
+        }
+    })
+    actualizarCarrito();
+}
 
-    console.log(carrito)
-    precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.cantidad * prod.precio, 0)
-    //Por cada producto que se recorra en el carrito, al acumulador se le suma la propiedad precio con el acumulador empezando en 0.
+//ELIMINAR PRODUCTO DEL CARRITO
+const eliminarDelCarrito = (productoAEliminarId) => {
+    const item = carrito.find((productoAEliminarId) => productoAEliminarId.id === productoAEliminarId)
 
+    const indice = carrito.indexOf(item) //Busca el producto a eliminar y devuelve su indice.
+
+    carrito.splice(indice, 1) //Se le pase el indice del producto obtenido de "item" y borra dicho producto 
+    actualizarCarrito() //Luego se actualiza el carrito para ver los cambios
 }
