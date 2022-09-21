@@ -85,28 +85,23 @@ for(const productos of stockProductos) {
 }
 
 //BUSQUEDA
-const formulario = document.querySelector('#formulario');
+//BUSQUEDA
+const d = document;
 
-//const botonBuscador = document.querySelector('.btn')
-const botonBuscador = document.querySelector('.btn');
-const resultado = document.querySelector('#resultado');
+function searchFilters(input, selector) {
+    d.addEventListener("keyup", e => {
+        if(e.target.matches(input)) {
+            console.log(e.target.value);
 
-const filtrarBusqueda = () => {
-    //console.log(formulario.value);
-    resultado.innerHTML = '';
-    const textoBusqueda = formulario.value.toLowerCase();
-    
-    for(const productos of stockProductos) {
-        const nombre = productos.nombre.toLowerCase();
-        if (nombre.indexOf(textoBusqueda) !== -1) {
-            resultado.innerHTML += `
-            <li>${productos.nombre}</li>`
+            if(e.key === "Escape")e.target.value = ""
+
+            d.querySelectorAll(selector).forEach((el) => 
+                el.textContent.toLowerCase().includes(e.target.value)
+                ? el.classList.remove("filter")
+                : el.classList.add("filter")
+            );
         }
-    }
-    if(resultado.innerHTML === '') {
-        resultado.innerHTML += `
-        <li>Producto no encontrado</li>`
-    }
+    })
 }
 
-botonBuscador.addEventListener('click', filtrarBusqueda);
+searchFilters(".card-filter", ".producto");

@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!--CSS-->
     <link rel="stylesheet" href="estilos.css">
+    <!--SWEET ALERT-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <section class="body-container-products">
@@ -17,12 +19,11 @@
             <!--BARRA DE BÚSQUEDA-->
             <div class="body-container-barradebusqueda">
                 <div id="buscar" class="buscar">
-                    <input type="search"id="formulario" placeholder="Buscar" required>
+                    <input type="search" class="card-filter" placeholder="Buscar" required>
                     <div class="btn">
                         <i class="fas fa-search icon" id="btn"></i>
                     </div>
-                    <ul id="resultado"></ul>
-                    <div id="panel" class="panel"></div>
+                    <!--<div id="panel" class="panel"></div>-->
                 </div>
             </div>
             <!--CALCULAODRA-->
@@ -75,6 +76,8 @@
                     </div>
                 </div>
             </div>
+
+            <!--CARRITO DE COMPRAS-->
             <h4 id="boton-carrito"><img src="img/shopping-cart.svg" alt=""><span id="contadorCarrito">0</span></h4>
             <div class="modal-contenedor">
                 <div class="modal-carrito">
@@ -83,7 +86,7 @@
                     <div id="carrito-contenedor">
 
                     </div>
-                    <p class="precioProducto"><!--Precio total: $--><span id="precioTotal">0</span></p><button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button>
+                    <p class="precioProducto"><span id="precioTotal">0</span></p><button id="comprar-carrito" class="boton-agregar">COMPRAR</button>
                 </div>
             </div>
         </div>
@@ -91,6 +94,7 @@
     
     <main id="contenedor-productos"></main>
         
+    
     <!--BARRA DE BÚSQUEDA-->
     <script src="https://kit.fontawesome.com/712575d4a5.js" crossorigin="anonymous"></script>
     <!--SCRIPT PARA CALCULADORA-->
