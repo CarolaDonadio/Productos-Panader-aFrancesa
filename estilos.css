@@ -69,10 +69,6 @@ body::-webkit-scrollbar-thumb {
     font-size: 20px;
 
 }
-/*CLASE PARA BUSCAR LOS PRODUCTOS EN EL BUSCADOR INTERNO*/
-.filter {
-    display: none;
-}
 /*********************************************************/
 
 /*CALCULADORA*/
@@ -431,6 +427,11 @@ button#equal {
     color: #fff;
 }
 /******************************************************/
+
+/*CLASE PARA BUSCAR LOS PRODUCTOS EN EL BUSCADOR INTERNO*/
+.filter {
+    display: none;
+}
 
 /**************CARRITO DE COMPRAS POR DENTRO*********************/
 .boton-agregar {

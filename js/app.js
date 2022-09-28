@@ -16,7 +16,6 @@ let carrito = [];
 stockProductos.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto')
-    div.setAttribute('id', '#resultado')
 
     div.innerHTML = `
     <img src=${producto.img} class="imgBox" alt= "">
@@ -52,9 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
 //ELIMINAR PRODUCTO DEL CARRITO
 const eliminarDelCarrito = (id) => {
     carrito = carrito.filter((item) => item.id !== id)
-    //carrito.length === 0;
-    if (carrito.length === 0) return localStorage.clear();
+
     actualizarCarrito();
+    if (carrito.length === 0) return localStorage.clear();
+
     console.log(id);
 }
 
@@ -98,7 +98,7 @@ function renderPrecioTotal() {
 // renderItemCarrito()
 //Por cada producto creamos un div con esta estructura y le hacemos un append al contenedorCarrito (el modal)
 function renderItemCarrito() {
-    contenedorCarrito.innerHTML = "" //classProducto === div
+    contenedorCarrito.innerHTML = ""
     carrito.forEach((prod) => {
         const div = document.createElement('div')
         div.className = ('productoEnCarrito')
@@ -136,6 +136,7 @@ function cambiarNumeroDeUnidades(action, id) {
             } else if (action === "aumentar" && numberOfUnits < item.stock) {
                 numberOfUnits++;
             }
+
         }
         return {
             ...item,
@@ -151,6 +152,6 @@ botonComprarInterno.addEventListener('click', () => {
     if(carrito.length > 0) {
         swal('¡Gracias por su compra!', 'Vuleva pronto', 'success');
     } else {
-        swal('Usted no tiene productos en el carrito.', 'Debe añadr un producto', 'error');
+        swal('Usted no tiene productos en el carrito.', 'Debe añadir un producto', 'error');
     }
 })

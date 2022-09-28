@@ -84,8 +84,7 @@ for(const productos of stockProductos) {
     productos.precioConIva();
 }
 
-//BUSQUEDA
-//BUSQUEDA
+/*BÚSQUEDA*/
 const d = document;
 
 function searchFilters(input, selector) {
