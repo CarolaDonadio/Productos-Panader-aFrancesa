@@ -13,32 +13,40 @@ const cantidadTotal = document.getElementById('cantidadTotal')
 let carrito = [];
 
 //PRIMER PRIMER PASO, INYECTAR EL HTML
-stockProductos.forEach((producto) => {
-    const div = document.createElement('div')
-    div.classList.add('producto')
+const infoProductos = async () => {
+    const contenedorProductos = document.getElementById('contenedor-productos')
+    const response = await fetch("./data.json")
+    const stockProductos = await response.json();
 
-    div.innerHTML = `
-    <img src=${producto.img} class="imgBox" alt= "">
-    <div class="product-details">
-        <div class="product-title">
-            <h3>${producto.nombre}</h3>
-        </div>
-        <div class="product-description">
-            <h4>Description</h4>
-            <p>${producto.descripcion}</p>
-        </div>
-        <div class="product-buy">
-            <div class="product-price">
-                <span class="precioProducto"><small>$</small>${producto.precio},<small>00</small></span>
+    stockProductos.forEach((producto) => {
+        const div = document.createElement('div')
+        div.classList.add('producto')
+    
+        div.innerHTML = `
+        <img src=${producto.img} class="imgBox" alt= "">
+        <div class="product-details">
+            <div class="product-title">
+                <h3>${producto.nombre}</h3>
             </div>
-            <div class="product-button" onclick="addToCart(${producto.id})">
-            <a>Comprar</a>
-        <div>
+            <div class="product-description">
+                <h4>Description</h4>
+                <p>${producto.descripcion}</p>
+            </div>
+            <div class="product-buy">
+                <div class="product-price">
+                    <span class="precioProducto"><small>$</small>${producto.precio},<small>00</small></span>
+                </div>
+                <div class="product-button" onclick="addToCart(${producto.id})">
+                <a>Comprar</a>
+            <div>
+            </div>
         </div>
-    </div>
-    `
-    contenedorProductos.appendChild(div)
-})
+        `
+        contenedorProductos.appendChild(div)
+    })
+}
+
+infoProductos();
 
 //ESTO ES PARA DEJAR LOS PRODUCTOS GUARDADOS AL REFRESCAR LA PÁGINA
 document.addEventListener('DOMContentLoaded', () => {
@@ -54,7 +62,7 @@ const eliminarDelCarrito = (id) => {
 
     actualizarCarrito();
     if (carrito.length === 0) return localStorage.clear();
-
+    
     console.log(id);
 }
 
@@ -66,7 +74,10 @@ function actualizarCarrito() {
 
 //AGREGAR AL CARRITO
 //VERIFICAR SI EL PRODUCTO YA EXISTE EN EL CARRITO
-function addToCart(id) {
+const addToCart = async (id) => {
+    const response = await fetch("./data.json");
+    const stockProductos = await response.json();
+
     if (carrito.some((item) => item.id === id)) {
         cambiarNumeroDeUnidades("aumentar", id)
     } else {
@@ -76,8 +87,11 @@ function addToCart(id) {
             numberOfUnits: 1,
         });
     }
+
     actualizarCarrito();
 }
+
+addToCart();
 
 // Calcular y renderizar el precio total
 function renderPrecioTotal() {
@@ -85,14 +99,12 @@ function renderPrecioTotal() {
     productosTotales = 0;
 
     carrito.forEach((item) => {
-        valorTotal += item.precio * item.numberOfUnits;
+        valorTotal += (item.precio + (item.precio * 21 / 100)) * item.numberOfUnits;
         productosTotales += item.numberOfUnits;
     })
 
-    precioTotal.innerHTML = `Precio total: $<span id="precioTotal">${valorTotal.toFixed(2)}</span><br>Total Productos: ${productosTotales}`
+    precioTotal.innerHTML = `Precio Total (IVA incluido): $<span id="precioTotal">${valorTotal.toFixed(2)}</span><br>Total Productos: ${productosTotales}`
 }
-
-
 
 
 // renderItemCarrito()
@@ -124,8 +136,6 @@ function renderItemCarrito() {
     contadorCarrito.innerText = carrito.length // Se actualiza con la longitud del carrito.
 }
 
-
- 
 //Cambiar el número de unidades por un prod(item)
 function cambiarNumeroDeUnidades(action, id) {
     carrito = carrito.map((item) => {

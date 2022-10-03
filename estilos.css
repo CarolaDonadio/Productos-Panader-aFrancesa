@@ -515,6 +515,16 @@ button#equal {
     cursor: pointer;
 }*/
 
+/****************MODAL SWEET ALERT*************/
+.swal-button {
+    background-color: #ff2348;
+}
+
+.swal-button:not([disabled]):hover {
+    background-color: #e0202c;
+}
+/**********************************************/
+
 /***************************MEDIA QUERIES**********************/
 @media screen and (max-width: 1236px) {
     #contenedor-productos {
