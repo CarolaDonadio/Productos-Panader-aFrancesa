@@ -14,36 +14,41 @@ let carrito = [];
 
 //PRIMER PRIMER PASO, INYECTAR EL HTML
 const infoProductos = async () => {
-    const contenedorProductos = document.getElementById('contenedor-productos')
-    const response = await fetch("./data.json")
-    const stockProductos = await response.json();
-
-    stockProductos.forEach((producto) => {
-        const div = document.createElement('div')
-        div.classList.add('producto')
-    
-        div.innerHTML = `
-        <img src=${producto.img} class="imgBox" alt= "">
-        <div class="product-details">
-            <div class="product-title">
-                <h3>${producto.nombre}</h3>
-            </div>
-            <div class="product-description">
-                <h4>Description</h4>
-                <p>${producto.descripcion}</p>
-            </div>
-            <div class="product-buy">
-                <div class="product-price">
-                    <span class="precioProducto"><small>$</small>${producto.precio},<small>00</small></span>
+    try {
+        const contenedorProductos = document.getElementById('contenedor-productos')
+        const response = await fetch("./data.json")
+        const stockProductos = await response.json();
+        
+        stockProductos.forEach((producto) => {
+            const div = document.createElement('div')
+            div.classList.add('producto')
+            
+            div.innerHTML = `
+            <img src=${producto.img} class="imgBox" alt= "">
+            <div class="product-details">
+                <div class="product-title">
+                    <h3>${producto.nombre}</h3>
                 </div>
-                <div class="product-button" onclick="addToCart(${producto.id})">
-                <a>Comprar</a>
-            <div>
+                <div class="product-description">
+                    <h4>Description</h4>
+                    <p>${producto.descripcion}</p>
+                </div>
+                <div class="product-buy">
+                    <div class="product-price">
+                        <span class="precioProducto"><small>$</small>${producto.precio},<small>00</small></span>
+                    </div>
+                    <div class="product-button" onclick="addToCart(${producto.id})">
+                        <a>Comprar</a>
+                    <div>
+                </div>
             </div>
-        </div>
         `
         contenedorProductos.appendChild(div)
     })
+    } catch(error) {
+        console.log(`Se ha producido un error:`, error);
+    }
+    
 }
 
 infoProductos();
@@ -75,20 +80,24 @@ function actualizarCarrito() {
 //AGREGAR AL CARRITO
 //VERIFICAR SI EL PRODUCTO YA EXISTE EN EL CARRITO
 const addToCart = async (id) => {
-    const response = await fetch("./data.json");
-    const stockProductos = await response.json();
-
-    if (carrito.some((item) => item.id === id)) {
-        cambiarNumeroDeUnidades("aumentar", id)
-    } else {
-        const item = stockProductos.find((producto) => producto.id === id);
-        carrito.push({
-            ...item,
-            numberOfUnits: 1,
-        });
-    }
-
-    actualizarCarrito();
+    try {
+        const response = await fetch("./data.json");
+        const stockProductos = await response.json();
+        
+        if (carrito.some((item) => item.id === id)) {
+            cambiarNumeroDeUnidades("aumentar", id)
+        } else {
+            const item = stockProductos.find((producto) => producto.id === id);
+            carrito.push({
+                ...item,
+                numberOfUnits: 1,
+            });
+        }
+        
+        actualizarCarrito();
+    } catch(error) {
+        console.log(`Se ha producido un error:`, error);
+    }   
 }
 
 addToCart();
