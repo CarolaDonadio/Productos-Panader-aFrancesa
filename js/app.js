@@ -57,6 +57,7 @@ infoProductos();
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('carrito')){
         carrito = JSON.parse(localStorage.getItem('carrito'))
+        /*addToCart();*/
         actualizarCarrito()
     }
 })
@@ -99,8 +100,6 @@ const addToCart = async (id) => {
         console.log(`Se ha producido un error:`, error);
     }   
 }
-
-addToCart();
 
 // Calcular y renderizar el precio total
 function renderPrecioTotal() {
